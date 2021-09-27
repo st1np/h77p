@@ -1,12 +1,12 @@
 @media screen and (max-width: 683px) {
     html {
-        font-size: 31.25%;
+        font-size: 50%;
     }
 }
 
 @media screen and (max-width: 370px) {
     html {
-        font-size: 16.92%;
+        font-size: 35%;
     }
     
     nav li:not(.logo-li){
