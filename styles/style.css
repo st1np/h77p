@@ -1,0 +1,64 @@
+html {
+    font-size: 62.5%;
+    transition:font-size 0.1s;
+    -moz-transition:font-size 0.1s; /* Firefox 4 */
+    -webkit-transition:font-size 0.1s; /* Safari and Chrome */
+    -o-transition:font-size 0.1s;
+}
+
+body {
+    background-color: #24252a;
+    color: #fdeded;
+    font-size: 1.6rem;
+}
+
+section.main {
+    height: 100vh;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.main > * {
+    overflow: hidden;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+header nav {
+    padding-top: 2rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    margin-right: 13px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
+nav .logo {
+    width: 5rem;
+    height: 5rem;
+}
+
+section.main main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    text-align: center;
+    width: 30%;
+}
