@@ -1,15 +1,24 @@
 @media screen and (max-width: 683px) {
     html {
-        font-size: 50%;
+        font-size: 55%;
     }
 }
 
 @media screen and (max-width: 370px) {
     html {
-        font-size: 35%;
+        font-size: 50%;
     }
-    
-    nav li:not(.logo-li){
+
+    header {
+        width: 100%;
+    }
+
+    nav ul > * {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    nav li:not(.logo-li, .menu){
         display: none;
     }
 

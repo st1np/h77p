@@ -41,29 +41,46 @@ nav ul {
 
 nav li {
     font-size: 1.5rem;
-    letter-spacing: 0.1rem;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
     margin-right: 13px;
-}
-
-nav .logo-li {
-    margin: 0px 20px;
 }
 
 nav li:nth-child(2), nav li:last-child {
     margin-right: 0;
 }
 
-nav .logo {
-    width: 5.5rem;
-    height: 5.5rem;
+nav .logo-li {
+    margin: 0px 20px;
 }
+
+nav .logo {
+    width: 6.8rem;
+    height: 6.8rem;
+}
+
+nav .logo g {
+    fill: url(#gradient);
+}
+
 
 section.main main {
     display: flex;
     align-items: center;
     justify-content: center;
     
-    font-size: 2rem;
-    text-align: center;
     width: 40%;
+}
+
+main > h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+
+    background: #e0354f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(315deg, #61131b 0%, #e0354f 74%);
+    ;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(315deg, #61131b 0%, #e0354f 74%); /* #751822 W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
