@@ -45,13 +45,17 @@ nav li {
     margin-right: 13px;
 }
 
-nav li:last-child {
+nav .logo-li {
+    margin: 0px 20px;
+}
+
+nav li:nth-child(2), nav li:last-child {
     margin-right: 0;
 }
 
 nav .logo {
-    width: 5rem;
-    height: 5rem;
+    width: 5.5rem;
+    height: 5.5rem;
 }
 
 section.main main {
