@@ -4,25 +4,46 @@
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 400px) {
     html {
         font-size: 50%;
     }
 
-    header {
-        width: 100%;
-    }
-
+    
     nav ul > * {
         flex-basis: 0;
         flex-grow: 1;
+    }
+    
+    nav li {
+        margin: 0;
     }
 
     nav li:not(.logo-li, .menu){
         display: none;
     }
 
-    nav .logo-li {
-        margin: 0;
+    nav .logo-li > * {
+        margin-right: 4.5rem;
+    }
+
+    nav .menu {
+        display: flex;
+        z-index: 10;
+    }
+
+    nav .menu > * {
+        box-sizing: content-box;
+        padding: 7px;
+        margin-left: 4.5rem;
+    }
+
+    header > .menu-toggle {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #24252ae8;
+        z-index: 9;
     }
 }
