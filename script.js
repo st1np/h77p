@@ -9,39 +9,47 @@ var closeSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
 
 var menuOpen = true
 
-function openMenu() {
-    menu.innerHTML = closeSvg
-    menuOpen = false
-    document.body.style.overflow = 'hidden'
-
-    coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem;`
-    supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem;`
-}
-
-function closeMenu() {
-    menu.innerHTML = menuSvg
-    menuOpen = true
-    document.body.style.overflow = 'inherit'
-
-    coursesLi.style = ''
-    supportLi.style = ''
-}
-
-menu.addEventListener('click', () => {
-    if (menuOpen == true) {
-        openMenu()
-    } else if (menuOpen == false) {
-        closeMenu()
+function mediaQueries(media) {
+    if(media.matches) {
+        function openMenu() {
+            menu.innerHTML = closeSvg
+            menuOpen = false
+            document.body.style.overflow = 'hidden'
+        
+            coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem;`
+            supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem;`
+        }
+        
+        function closeMenu() {
+            menu.innerHTML = menuSvg
+            menuOpen = true
+            document.body.style.overflow = 'inherit'
+        
+            coursesLi.style = ''
+            supportLi.style = ''
+        }
+        
+        menu.addEventListener('click', () => {
+            if (menuOpen == true) {
+                openMenu()
+            } else if (menuOpen == false) {
+                closeMenu()
+            }
+            menuToggle.classList.toggle('menu-toggle')
+        })
+        
+        supportLi.addEventListener('click', () => {
+            closeMenu()
+            menuToggle.classList.toggle('menu-toggle')
+        })
+        
+        coursesLi.addEventListener('click', () => {
+            closeMenu()
+            menuToggle.classList.toggle('menu-toggle')
+        })
     }
-    menuToggle.classList.toggle('menu-toggle')
-})
+}
 
-supportLi.addEventListener('click', () => {
-    closeMenu()
-    menuToggle.classList.toggle('menu-toggle')
-})
-
-coursesLi.addEventListener('click', () => {
-    closeMenu()
-    menuToggle.classList.toggle('menu-toggle')
-})
+var media = window.matchMedia("(max-width: 400px)")
+mediaQueries(media)
+media.addListener(mediaQueries)
