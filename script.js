@@ -9,33 +9,40 @@ var closeSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
 
 var menuOpen = true
 
+function openMenu() {
+    menuToggle.classList.toggle('menu-toggle')
+    menu.innerHTML = closeSvg
+    menuOpen = false
+    document.body.style.overflow = 'hidden'
+
+    coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem;`
+    supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem;`
+}
+
+function closeMenu() {
+    menu.innerHTML = menuSvg
+    menuOpen = true
+    document.body.style.overflow = 'inherit'
+
+    coursesLi.style = ''
+    supportLi.style = ''
+}
+
 function mediaQueries(media) {
+    document.body.style.backgroundColor = 'yellow'
     if(media.matches) {
-        function openMenu() {
-            menu.innerHTML = closeSvg
-            menuOpen = false
-            document.body.style.overflow = 'hidden'
-        
-            coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem;`
-            supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem;`
-        }
-        
-        function closeMenu() {
-            menu.innerHTML = menuSvg
-            menuOpen = true
-            document.body.style.overflow = 'inherit'
-        
-            coursesLi.style = ''
-            supportLi.style = ''
-        }
-        
+        closeMenu()
+        menuOpen = true
         menu.addEventListener('click', () => {
+            console.log(menuOpen)
             if (menuOpen == true) {
+                console.log('a')
                 openMenu()
             } else if (menuOpen == false) {
+                console.log('b')
                 closeMenu()
+                menuToggle.classList.toggle('menu-toggle')
             }
-            menuToggle.classList.toggle('menu-toggle')
         })
         
         supportLi.addEventListener('click', () => {
@@ -47,6 +54,13 @@ function mediaQueries(media) {
             closeMenu()
             menuToggle.classList.toggle('menu-toggle')
         })
+    } else {
+        document.body.style.backgroundColor = 'green'
+        closeMenu()
+        menuToggle.classList.toggle('menu-toggle')
+        menu.removeEventListener('click', () => {})
+        supportLi.removeEventListener('click', () => {})
+        coursesLi.removeEventListener('click', () => {})
     }
 }
 
