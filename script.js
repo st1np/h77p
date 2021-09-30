@@ -12,40 +12,36 @@ const menuEvents = {
         document.body.style.overflow = 'hidden'
         coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem`
         supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem`
+        menuEvents.menuIsOpened = true
+        menuToggle.classList.toggle('menu-toggle')
     },
     closeMenu: () => {
         menu.innerHTML = menuSvg
         document.body.style.overflow = 'inherit'
         coursesLi.style = ''
         supportLi.style = ''
+        menuEvents.menuIsOpened = false
+        menuToggle.classList.toggle('menu-toggle')
     },
     menuClick: () => {
         menu.addEventListener('click', function menuClick() {
             if (menuEvents.menuIsOpened == false) {
-                menuEvents.menuIsOpened = true
-                
-                menuToggle.classList.toggle('menu-toggle')
                 menuEvents.openMenu()
             } else if (menuEvents.menuIsOpened == true) {
-                menuEvents.menuIsOpened = false
-                
-                menuToggle.classList.toggle('menu-toggle')
                 menuEvents.closeMenu()
             }
         })
     },
     coursesClick: () => {
         coursesLi.addEventListener('click', function coursesClick() {
-            menuToggle.classList.toggle('menu-toggle')
             menuEvents.closeMenu()
-            menuEvents.menuIsOpened = false
+            menuToggle.classList.remove('menu-toggle')
         })
     },
     supportClick: () => {
         supportLi.addEventListener('click', function supportClick() {
-            menuToggle.classList.toggle('menu-toggle')
             menuEvents.closeMenu()
-            menuEvents.menuIsOpened = false
+            menuToggle.classList.remove('menu-toggle')
         })
     }
 }
@@ -56,14 +52,12 @@ menuEvents.supportClick()
 
 function mediaQueries(media) {
     if (media.matches) {
-        menuToggle.classList.remove('menu-toggle')
         menuEvents.closeMenu()
-        menuEvents.menuIsOpened = false
+        menuToggle.classList.remove('menu-toggle')
     } else {
         if (menuEvents.menuIsOpened == true) {
-            menuToggle.classList.toggle('menu-toggle')
             menuEvents.closeMenu()
-            menuEvents.menuIsOpened = false
+            menuToggle.classList.remove('menu-toggle')
         }
     }
 }
