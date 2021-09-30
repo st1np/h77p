@@ -18,26 +18,30 @@ body {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-color: blanchedalmond;
+    background-color: #24252a;
     overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loaderCircle {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 4rem;
     width: 4rem;
-    border: 5px solid red;
+    border: 0.4rem solid #36383f;
     border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s infinite;
+    border-top-color: #e0354f;
+    animation: spin 1s infinite linear;
 }
 
 @keyframes spin {
-    100% {
-        transform: rotate(360deg);
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
     }
 }
 
