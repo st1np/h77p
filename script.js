@@ -55,10 +55,8 @@ function mediaQueries(media) {
         menuEvents.closeMenu()
         menuToggle.classList.remove('menu-toggle')
     } else {
-        if (menuEvents.menuIsOpened == true) {
-            menuEvents.closeMenu()
-            menuToggle.classList.remove('menu-toggle')
-        }
+        menuEvents.closeMenu()
+        menuToggle.classList.remove('menu-toggle')
     }
 }
 
