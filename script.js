@@ -60,15 +60,13 @@ function mediaQueries(media) {
     }
 }
 
-var media = window.matchMedia("(max-width: 400px)")
-mediaQueries(media)
-media.addListener(mediaQueries)
-
-
 // LOADING PAGE
 
 const loader = document.getElementById('loader')
 window.addEventListener("load", function() {
     loader.style.display = 'none'
     document.body.style.overflow = 'initial'
+    var media = window.matchMedia("(max-width: 400px)")
+    mediaQueries(media) 
+    media.addListener(mediaQueries)
 })
