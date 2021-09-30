@@ -13,6 +13,15 @@ body {
     font-size: 1.6rem;
 }
 
+.loader {
+    z-index: 99;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: blanchedalmond;
+    overflow: hidden;
+}
+
 section.main {
     height: 100vh;
     margin: auto;
@@ -118,6 +127,14 @@ div > .down {
 
 section.content {
     height: 100vh;
+}
+
+section.content main {
+    height: 100%;
+}
+
+.content .courses-container , .content .support-container {
+    height: 50%;
 }
 
 /* .centralizado {
