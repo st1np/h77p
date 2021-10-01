@@ -9,6 +9,7 @@ const menuEvents = {
     menuIsOpened: false,
     openMenu: () => {
         menu.innerHTML = closeSvg
+        window.scrollTo(0, 0)
         document.body.style.overflow = 'hidden'
         coursesLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 20rem`
         supportLi.style= `z-index: 10; display: flex; position: absolute; margin-top: 30rem`
@@ -63,7 +64,11 @@ function mediaQueries(media) {
 // LOADING PAGE
 
 const loader = document.getElementById('loader')
+var scrollT = document.body.scrollTop
+var scrollL = document.body.scrollLeft
+window.scrollTo(0, 0);
 window.addEventListener("load", function() {
+    console.log(scrollL, scrollT)
     loader.style.display = 'none'
     document.body.style.overflow = 'initial'
     var media = window.matchMedia("(max-width: 400px)")
